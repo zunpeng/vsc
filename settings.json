@@ -1,0 +1,926 @@
+{
+    "window.titleBarStyle": "custom",
+    "window.commandCenter": false,
+    // "window.menuBarVisibility": "toggle",   // 菜单栏是否显示    toggle会隐藏
+    // 工作台界面配置
+    "workbench.colorTheme": "zun-theme",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "none",
+    // 自定义颜色
+    "workbench.colorCustomizations": {
+        // 自定义状态栏颜色
+        "statusBar.background": "#55606405",
+        "statusBar.noFolderBackground": "#55606405",
+        "statusBar.debuggingBackground": "#55606405"
+    },
+    "timeline.pageSize": null, // 时间线窗口大小设置
+    "files.autoGuessEncoding": true, // 自动识别文件编码
+    "files.insertFinalNewline": true, // 保存文件时，自动在文件尾部插入一行新行
+    "files.trimTrailingWhitespace": true, // 保存文件时，自动清除行尾空格
+    "vsicons.presets.tsOfficial": true,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "redhat.telemetry.enabled": false, // 是否允许将使用情况数据和错误发送到red hat服务器
+    "git.ignoreLegacyWarning": true,
+    "git.autofetch": true,
+    // vscode 扩展配置
+    "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": false,
+    "extensions.ignoreRecommendations": false,
+    // 编辑器配置
+    "editor.inlayHints.enabled": "off", // 关闭代码行内提示
+    "editor.lineNumbers": "relative", // 相对行号
+    "editor.cursorSurroundingLines": 5, // 关标所在行上下预留行数
+    "editor.fontSize": 15, // 字号
+    "editor.fontFamily": "'DroidSansMono Nerd Font','Source Code Pro for Powerline',Consolas, 'Courier New', monospace", // 字体
+    "editor.suggestSelection": "recentlyUsedByPrefix", //根据之前补全过的建议的前缀来进行选择。例如，co -> console、con -> const。
+    "editor.wordWrap": "bounded", // 在社区宽度或指列列最小处折行，与editor.wordwrapColumn同时配置
+    "editor.wordWrapColumn": 180,
+    "editor.renderLineHighlight": "all",
+    "editor.emptySelectionClipboard": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    // 控制自动缩进的，如果不关闭，lua自动缩进默认会是3个空格，即使格式化后变成4个空格，但缩进线也会在第3个空格上
+    "editor.detectIndentation": false,
+    "editor.minimap.enabled": false,
+    "debug.console.fontFamily": "'DroidSansMono Nerd Font','Source Code Pro for Powerline',Consolas, 'Courier New', monospace",
+    "debug.console.fontSize": 15,
+    // 输出框中滚动锁定，默认情况下鼠标点击输入框，会自动解锁，然后自动滚动失效，手动锁定后，才能滚动，设置为false后只要不是手动解锁，会一直锁定自动滚动
+    "output.smartScroll.enabled": false,
+    "terminal.integrated.fontFamily": "'DroidSansMono Nerd Font','Source Code Pro for Powerline',Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontSize": 15,
+    // 解决下方终端输出中文乱码
+    // "terminal.integrated.profiles.windows": {
+    //     "PowerShell": {
+    //         "source": "PowerShell",
+    //         "icon": "terminal-powershell",
+    //         "args": [
+    //             "-NoExit",
+    //             "chcp 65001"
+    //         ]
+    //     },
+    //     "Command Prompt": {
+    //         "path": [
+    //             "${env:windir}\\Sysnative\\cmd.exe",
+    //             "${env:windir}\\System32\\cmd.exe"
+    //         ],
+    //         "args": [
+    //             "/K",
+    //             "chcp 65001"
+    //         ],
+    //         "icon": "terminal-cmd"
+    //     },
+    // },
+    // "errorLens.enabled": false,
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        // "warning",
+        // "info"
+    ],
+    "errorLens.editorHoverPartsEnabled": {
+        "messageEnabled": false,
+        "sourceCodeEnabled": false,
+        "buttonsEnabled": false
+    },
+    // java
+    "java.jdt.ls.java.home": "D:/Apps/java/jdk-20.0.2/", // vscode启动须使用17或更高版本1.8不能用了
+    "java.configuration.runtimes": [ // 运行时jdk（编码时使用）后面的spring-boot和maven中配置的jdk与此处一致
+        {
+            "name": "JavaSE-1.8",
+            "path": "D:/Apps/Java/jdk1.8.0_201/",
+            "default": true,
+        },
+        // {
+        // 	"name": "JavaSE-19",
+        // 	"path": "D:/Apps/java/jdk-19.0.2/",
+        // 	"default": true
+        // },
+    ],
+    "java.completion.matchCase": "off", // 代码补全区分大小写，关闭
+    //vscode报错：Error trying to find JVM: TypeError: Cannot read property ‘isJdk‘ of null
+    // "spring-boot.ls.java.home": "D:/Apps/Java/jdk1.8.0_201/",
+    // java lombok
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"D:\\Apps\\VSCode\\data\\extensions\\gabrielbb.vscode-lombok-1.0.1\\server\\lombok.jar\"",
+    "java.project.importOnFirstTimeStartup": "automatic",
+    // 设置排除显示
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/*.class": true
+    },
+    //全局搜索忽略
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        "**/target": true,
+        "**/logs": true
+    },
+    // ---------- maven ----------
+    "java.configuration.maven.userSettings": "D:/Apps/apache-maven-3.9.0/conf/settings.xml", // maven配置文件路径
+    "maven.settingsFile": "D:/Apps/apache-maven-3.9.0/conf/settings.xml",
+    "maven.excludedFolders": [
+        "**/.*",
+        "**/node_modules",
+        "**/target",
+        "**/bin"
+    ],
+    "maven.executable.path": "D:/Apps/apache-maven-3.9.0/bin/mvn",
+    "maven.terminal.useJavaHome": true,
+    "maven.terminal.customEnv": [
+        {
+            "environmentVariable": "JAVA_HOME",
+            "value": "D:/Apps/Java/jdk1.8.0_201/"
+        }
+    ],
+    "maven.executable.preferMavenWrapper": false,
+    "maven.view": "hierarchical", // maven目录树形式
+    // ---------- spring ----------
+    "spring.initializr.defaultLanguage": "Java", // 默认语言
+    "spring.initializr.defaultJavaVersion": "8", // 默认java版本
+    "spring.initializr.defaultArtifactId": "demo", // 默认 Artifact Id.
+    "spring.initializr.defaultGroupId": "wang.zunpeng", // 默认 Group Id.
+    "spring.initializr.serviceUrl": [ // 设置多个初始化spring网站时，生成项目时需要手动选择其一
+        "https://start.spring.io/",
+        "https://start.aliyun.com/"
+    ],
+    "spring.initializr.defaultPackaging": "JAR", // spring项目默认打包方式
+    "spring.initializr.defaultOpenProjectMethod": "Add to Workspace", // 初始化后的spring项目默认打开到工作区
+    // ---------- lua ----------
+    // table的大括号后格式化换行
+    "luahelper.format.break_after_table_lb": true,
+    "luahelper.format.break_before_table_rb": true,
+    // 表元素换行对齐显示
+    "luahelper.format.chop_down_table": true,
+    "luahelper.format.align_table_field": true,
+    // 如果是kv键值对元素，换行对齐，默认也是true
+    "luahelper.format.chop_down_kv_table": true,
+    // false自动去掉元素最后一个逗号,true格式化时会自动添加逗号，默认不添加
+    "luahelper.format.extra_sep_at_table_end": false,
+    // "luahelper.format.table_sep": ","
+    // 参数对齐
+    "luahelper.format.align_args": true,
+    "luahelper.format.chop_down_parameter": true,
+    "luahelper.base.showOnline": false,
+    "[lua]": {
+        "editor.defaultFormatter": "yinfei.luahelper"
+    },
+    //---------- vue ----------
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    },
+    //---------- markdown ----------
+    //配置图片粘贴路径，需两个配置一起使用，如果不加路径，则会默认存放到根目录下，且path配置中不能使用表达式
+    "markdown-image.local.path": "./.images/",
+    "markdown-image.base.fileNameFormat": "${mdname}/IMG_${YY}${MM}${DD}-${HH}${mm}${ss}${mss}",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    //---------- php ----------
+    "php.validate.executablePath": "D:/Apps/php/php-5.5.9/php.exe",
+    //---------- vim ----------
+    //vscode vim
+    "vim.textwidth": 180,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    // 插入模式下
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "after": [
+                "RightArrow"
+            ]
+        }
+    ],
+    "vim.operatorPendingModeKeyBindings": [
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        //添加当前位置换行快捷键
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "j"
+            ],
+            "after": [
+                "i",
+                "<CR>",
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "q",
+                "q"
+            ],
+            "commands": [
+                ":q"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "q"
+            ],
+            "commands": [
+                ":wq"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f",
+                "s"
+            ],
+            // "commands": [
+            //     ":w"
+            // ]
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
+        },
+        //注释
+        {
+            "before": [
+                "leader",
+                "c",
+                "c"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ],
+            "when": "editorTextFocus && !editorReadonly"
+        },
+        {
+            "before": [
+                "leader",
+                "c",
+                "u"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        },
+        // 代码变量生成
+        {
+            "before": [
+                "leader",
+                "c",
+                "v"
+            ],
+            "commands": [
+                "editor.action.codeAction"
+            ]
+        },
+        // 窗口操作
+        // 移动光标至其他窗口
+        // workbench.action.toggleZenMode	切换禅模式
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.toggleZenMode"
+            ]
+        },
+        // workbench.action.toggleFullScreen 全屏切换
+        {
+            "before": [
+                "<leader>",
+                "f",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.toggleFullScreen"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "j"
+            ],
+            "commands": [
+                "workbench.action.focusBelowGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.focusAboveGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
+        },
+        // 移动当前窗口到分割窗口
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "m",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.moveEditorToLeftGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "m",
+                "j"
+            ],
+            "commands": [
+                "workbench.action.moveEditorToDownGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "m",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.moveEditorToUpGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "m",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.moveEditorToRightGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "s",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.splitEditorRight"
+            ]
+        },
+        // 分割窗口
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "s",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.splitEditorLeft"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "s",
+                "j"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "s",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.splitEditorUp"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.quickOpenTerm"
+            ]
+        },
+        // workbench.action.previousEditor
+        // workbench.action.nextEditor
+        // 打开上一个或下一个页签
+        {
+            "before": [
+                "<leader>",
+                "t",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        //打开侧边栏
+        {
+            "before": [
+                "<leader>",
+                "e",
+                "e"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.toggleActivityBarVisibility"
+            ]
+        },
+        // 聚焦到侧边功能栏
+        {
+            "before": [
+                "<leader>",
+                "e",
+                "b"
+            ],
+            "commands": [
+                "workbench.action.focusActivityBar"
+            ]
+        },
+        // 打开或关闭右侧辅助功能栏
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.toggleAuxiliaryBar"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "f"
+            ],
+            "commands": [
+                "editor.action.formatDocument"
+            ],
+            "when": "editorTextFocus && !editorHasSelection"
+        },
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "r"
+            ],
+            "commands": [
+                "code-runner.run"
+            ],
+            // "when": "editorTextFocus && !editorHasSelection"
+        },
+        // 格式化import导包
+        {
+            "before": [
+                "<leader>",
+                "f",
+                "o"
+            ],
+            "commands": [
+                "editor.action.organizeImports"
+            ],
+            "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
+        },
+        //转到实现
+        {
+            "before": [
+                "g",
+                "i"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.goToImplementation"
+                }
+            ],
+            "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+        },
+        //转到引用
+        {
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.goToReferences"
+                }
+            ],
+            "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+        },
+        //转到定义
+        {
+            "before": [
+                "g",
+                "d"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.revealDefinition"
+                }
+            ],
+            "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+        },
+        // bookmarks 书签功能需要安装bookmarks插件
+        // add bookmarks
+        {
+            "before": [
+                ",",
+                "b",
+                "i"
+            ],
+            "commands": [
+                {
+                    "command": "bookmarks.toggle"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        // jump to previous bookmark
+        {
+            "before": [
+                ",",
+                "b",
+                "p"
+            ],
+            "commands": [
+                {
+                    "command": "bookmarks.jumpToPrevious"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        // jump to next book
+        {
+            "before": [
+                ",",
+                "b",
+                "n"
+            ],
+            "commands": [
+                {
+                    "command": "bookmarks.jumpToNext"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        // expand selection to previous
+        {
+            "before": [
+                ",",
+                "b",
+                "u"
+            ],
+            "commands": [
+                {
+                    "command": "bookmarks.expandSelectionToPrevious"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        // expand selection to next
+        {
+            "before": [
+                ",",
+                "b",
+                "d"
+            ],
+            "commands": [
+                {
+                    "command": "bookmarks.expandSelectionToNext"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        // shrinkSelection 收缩书签间的选择
+        {
+            "before": [
+                ",",
+                "b",
+                "o"
+            ],
+            "commands": [
+                {
+                    "command": "bookmarks.shrinkSelection"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        // list all bookmarks from all files
+        {
+            "before": [
+                ",",
+                "b",
+                "L"
+            ],
+            "commands": [
+                {
+                    "command": "bookmarks.listFromAllFiles"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        // list all bookmarks from current file
+        {
+            "before": [
+                ",",
+                "b",
+                "l"
+            ],
+            "commands": [
+                {
+                    "command": "bookmarks.list"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        // clear bookmarks from current file
+        {
+            "before": [
+                ",",
+                "b",
+                "c"
+            ],
+            "commands": [
+                {
+                    "command": "bookmarks.clear"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        // clear bookmarks from all files
+        {
+            "before": [
+                ",",
+                "b",
+                "C"
+            ],
+            "commands": [
+                {
+                    "command": "bookmarks.clear"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        // workbench.action.splitEditorUp
+        // 向上分屏
+        {
+            "before": [
+                ",",
+                "w",
+                "k"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.splitEditorUp"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": [
+                ",",
+                "w",
+                "l"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.splitEditorRight"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": [
+                ",",
+                "w",
+                "j"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.splitEditorDown"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": [
+                ",",
+                "w",
+                "h"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.splitEditor"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        // 最好是配置上要不然，会出现错乱的现象，还有就是把对应的ctrl+r相关的vscode默认快捷键给删掉
+        {
+            "before": [
+                "u"
+            ],
+            "commands": [
+                {
+                    "command": "undo"
+                }
+            ],
+            "when": "editorTextFocus"
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "commands": [
+                {
+                    "command": "redo"
+                }
+            ],
+            "when": "editorTextFocus"
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        //注释
+        {
+            "before": [
+                "leader",
+                "c",
+                "c"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ],
+            "when": "editorTextFocus && !editorReadonly"
+        },
+        {
+            "before": [
+                "leader",
+                "c",
+                "u"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        }
+    ],
+    "vim.leader": "<space>",
+    //激活vim中的快捷建，防止与vscode冲突   true 如果vscode有默认配置,设置vim专属,vscode不能使用 ,false vscode可以使用
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": true,
+        "<C-h>": false,
+        "<C-j>": false,
+        "<C-k>": false,
+        "<C-l>": false,
+        "<C-z>": true,
+        "<C-r>": true,
+        "<C-v>": true,
+        "<C-u>": true,
+    },
+    // ---------- code runner 插件配置 ----------
+    "code-runner.executorMap": {
+        "javascript": "node",
+        // 默认配置输出有乱码,设置成utf8
+        // 但是maven的话，测试main方法时，会找不到主类，目前还想不到解决办法
+        // "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        //'D:\Apps\Java\jdk1.8.0_201\bin\java.exe' '-cp' 'D:\workspace\java\test\target\classes' 'wang.zunpeng.Test_01'
+        // cd d:\workspace\java\test ; if ($?) { javac "d:\workspace\java\test\src\main\java\wang\zunpeng\Test_02.java" } ; if ($?) { java -cp d:\workspace\java\test/target/classes $javaPackageNameTest_02 }
+        // github上提供的解决办法，但是javaPackageName 无法识别
+        // "java": "cd $workspaceRootWithQuotes && javac $fullFileName && java -cp $workspaceRootWithQuotes $javaPackageName$fileNameWithoutExt"
+        "java": "cd $workspaceRoot && javac -encoding utf-8 $fullFileName && java -cp $workspaceRoot\\target\\classes $javaPackageName $fileNameWithoutExt",
+        // "java": "cd $dir && javac -encoding utf-8 $fileName && java -Dfile.encoding=UTF-8 $fileNameWithoutExt",
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "zig": "zig run",
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "php": "php",
+        "python": "python -u",
+        "perl": "perl",
+        "perl6": "perl6",
+        "ruby": "ruby",
+        "go": "go run",
+        "lua": "lua",
+        "groovy": "groovy",
+        "powershell": "powershell -ExecutionPolicy ByPass -File",
+        "bat": "cmd /c",
+        "shellscript": "bash",
+        "fsharp": "fsi",
+        "csharp": "scriptcs",
+        "vbscript": "cscript //Nologo",
+        "typescript": "ts-node",
+        "coffeescript": "coffee",
+        "scala": "scala",
+        "swift": "swift",
+        "julia": "julia",
+        "crystal": "crystal",
+        "ocaml": "ocaml",
+        "r": "Rscript",
+        "applescript": "osascript",
+        "clojure": "lein exec",
+        "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+        "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+        "racket": "racket",
+        "scheme": "csi -script",
+        "ahk": "autohotkey",
+        "autoit": "autoit3",
+        "dart": "dart",
+        "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+        "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+        "haskell": "runghc",
+        "nim": "nim compile --verbosity:0 --hints:off --run",
+        "lisp": "sbcl --script",
+        "kit": "kitc --run",
+        "v": "v run",
+        "sass": "sass --style expanded",
+        "scss": "scss --style expanded",
+        "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+        "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "sml": "cd $dir && sml $fileName"
+    },
+}
