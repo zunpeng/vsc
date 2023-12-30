@@ -31,7 +31,7 @@
     "editor.inlayHints.enabled": "off", // 关闭代码行内提示
     "editor.lineNumbers": "relative", // 相对行号
     "editor.cursorSurroundingLines": 5, // 关标所在行上下预留行数
-    "editor.fontSize": 15, // 字号
+    "editor.fontSize": 18, // 字号
     "editor.fontFamily": "'DroidSansMono Nerd Font','Source Code Pro for Powerline',Consolas, 'Courier New', monospace", // 字体
     "editor.suggestSelection": "recentlyUsedByPrefix", //根据之前补全过的建议的前缀来进行选择。例如，co -> console、con -> const。
     "editor.wordWrap": "bounded", // 在社区宽度或指列列最小处折行，与editor.wordwrapColumn同时配置
@@ -40,6 +40,9 @@
     "editor.emptySelectionClipboard": false,
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": "active",
+    // "editor.fontLigatures": true,   // 连字效果
+    "editor.linkedEditing": true, // 标签同步修改
+    "editor.suggest.insertMode": "replace", // 自动替换后面需要修改的内容
     // 控制自动缩进的，如果不关闭，lua自动缩进默认会是3个空格，即使格式化后变成4个空格，但缩进线也会在第3个空格上
     "editor.detectIndentation": false,
     "editor.minimap.enabled": false,
@@ -48,7 +51,7 @@
     // 输出框中滚动锁定，默认情况下鼠标点击输入框，会自动解锁，然后自动滚动失效，手动锁定后，才能滚动，设置为false后只要不是手动解锁，会一直锁定自动滚动
     "output.smartScroll.enabled": false,
     "terminal.integrated.fontFamily": "'DroidSansMono Nerd Font','Source Code Pro for Powerline',Consolas, 'Courier New', monospace",
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontSize": 18,
     // 解决下方终端输出中文乱码
     // "terminal.integrated.profiles.windows": {
     //     "PowerShell": {
@@ -83,7 +86,7 @@
         "buttonsEnabled": false
     },
     // java
-    "java.jdt.ls.java.home": "D:/Apps/java/jdk-20.0.2/", // vscode启动须使用17或更高版本1.8不能用了
+    "java.jdt.ls.java.home": "D:/Apps/Java/jdk-17.0.4.1/", // vscode启动须使用17或更高版本1.8不能用了
     "java.configuration.runtimes": [ // 运行时jdk（编码时使用）后面的spring-boot和maven中配置的jdk与此处一致
         {
             "name": "JavaSE-1.8",
@@ -332,7 +335,8 @@
             ],
             "commands": [
                 "workbench.action.focusLeftGroup"
-            ]
+            ],
+            "when": "workbench.action.focusActivityBar"
         },
         {
             "before": [
@@ -495,8 +499,20 @@
                 "e"
             ],
             "commands": [
-                "workbench.action.toggleSidebarVisibility"
+                "workbench.action.toggleSidebarVisibility",
             ]
+        },
+        // 打开侧边栏并自动聚焦到文件树
+        {
+            "before": [
+                "<leader>",
+                "e",
+                "f"
+            ],
+            "commands": [
+                "workbench.files.action.focusFilesExplorer"
+            ],
+            "when": "editorTextFocus"
         },
         {
             "before": [

@@ -1,338 +1,330 @@
 // 将键绑定放在此文件中以覆盖默认值
 [
-	// Alt + / 代码提示（alt+oem_2即为alt+/）
-	{
-		"key": "alt+oem_2",
-		"command": "editor.action.triggerSuggest",
-		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-	},
-	{
-		"key": "ctrl+space",
-		"command": "-editor.action.triggerSuggest",
-		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-	},
-	// 调出代码提示列表，ctrl+space在我们的环境中不能用，因为我们需要切换中文输入法
-	{
-		"key": "alt+oem_2",
-		"command": "editor.action.triggerSuggest",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "ctrl+space",
-		"command": "-editor.action.triggerSuggest",
-		"when": "editorTextFocus"
-	},
-
-	{
-		"key": "ctrl+alt+down",
-		"command": "editor.action.copyLinesDownAction",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "shift+alt+down",
-		"command": "-editor.action.copyLinesDownAction",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "ctrl+alt+up",
-		"command": "editor.action.copyLinesUpAction",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "shift+alt+up",
-		"command": "-editor.action.copyLinesUpAction",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	// 代码提示选择，部分时候也可以使用alt+n/p
-	{
-		"key": "alt+k",
-		"command": "selectPrevSuggestion",
-		"when": "editorTextFocus && suggestWidgetVisible"
-	},
-	{
-		"key": "alt+j",
-		"command": "selectNextSuggestion",
-		"when": "editorTextFocus && suggestWidgetVisible"
-	},
-	//跳至行尾(后面配置了alt+l跳转到行尾，此处配置可以去掉了)
-	{
-		"key": "alt+enter",
-		"command": "cursorEnd",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "end",
-		"command": "cursorEnd",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "ctrl+f12",
-		"command": "editor.action.goToImplementation",
-		"when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
-	},
-	{
-		"key": "ctrl+f12",
-		"command": "-editor.action.goToImplementation",
-		"when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
-	},
-	// {
-	// 	"key": "shift+k",
-	// 	"command": "editor.action.showHover",
-	// 	"when": "editorTextFocus"
-	// },
-	{
-		"key": "alt+e",
-		"command": "workbench.action.problems.focus"
-	},
-	{
-		"key": "alt+p",
-		"command": "editor.action.marker.prev",
-		"when": "editorFocus"
-	},
-	{
-		"key": "shift+alt+f8",
-		"command": "-editor.action.marker.prev",
-		"when": "editorFocus"
-	},
-	{
-		"key": "alt+n",
-		"command": "editor.action.marker.next",
-		"when": "editorFocus"
-	},
-	{
-		"key": "alt+f8",
-		"command": "-editor.action.marker.next",
-		"when": "editorFocus"
-	},
-	{
-		"key": "alt+p",
-		"command": "-keybindings.editor.toggleSortByPrecedence",
-		"when": "inKeybindings"
-	},
-	{
-		"key": "alt+p",
-		"command": "-togglePreserveCase",
-		"when": "editorFocus"
-	},
-	{
-		"key": "alt+p",
-		"command": "-toggleSearchPreserveCase",
-		"when": "searchViewletFocus"
-	},
-	{
-		"key": "ctrl+k",
-		"command": "-editor.action.nextSelectionMatchFindAction",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "ctrl+w j",
-		"command": "workbench.action.terminal.focus"
-	},
+    // Alt + / 代码提示（alt+oem_2即为alt+/）
+    {
+        "key": "alt+oem_2",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    },
+    // 调出代码提示列表，ctrl+space在我们的环境中不能用，因为我们需要切换中文输入法
+    {
+        "key": "alt+oem_2",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    // 代码提示选择，部分时候也可以使用alt+n/p
+    {
+        "key": "alt+k",
+        "command": "selectPrevSuggestion",
+        "when": "editorTextFocus && suggestWidgetVisible"
+    },
+    {
+        "key": "alt+j",
+        "command": "selectNextSuggestion",
+        "when": "editorTextFocus && suggestWidgetVisible"
+    },
+    //跳至行尾(后面配置了alt+l跳转到行尾，此处配置可以去掉了)
+    {
+        "key": "alt+enter",
+        "command": "cursorEnd",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "end",
+        "command": "cursorEnd",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+f12",
+        "command": "editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+f12",
+        "command": "-editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    // {
+    // 	"key": "shift+k",
+    // 	"command": "editor.action.showHover",
+    // 	"when": "editorTextFocus"
+    // },
+    {
+        "key": "alt+e",
+        "command": "workbench.action.problems.focus"
+    },
+    {
+        "key": "alt+p",
+        "command": "editor.action.marker.prev",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+f8",
+        "command": "-editor.action.marker.prev",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+n",
+        "command": "editor.action.marker.next",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+f8",
+        "command": "-editor.action.marker.next",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+p",
+        "command": "-keybindings.editor.toggleSortByPrecedence",
+        "when": "inKeybindings"
+    },
+    {
+        "key": "alt+p",
+        "command": "-togglePreserveCase",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+p",
+        "command": "-toggleSearchPreserveCase",
+        "when": "searchViewletFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-editor.action.nextSelectionMatchFindAction",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+w j",
+        "command": "workbench.action.terminal.focus"
+    },
     // 切换到资源管理器
-	{
-		"key": "ctrl+w t",
-		"command": "workbench.action.focusSideBar"
-	},
-	{
-		"key": "ctrl+0",
-		"command": "-workbench.action.focusSideBar"
-	},
+    {
+        "key": "ctrl+w t",
+        "command": "workbench.action.focusSideBar"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "-workbench.action.focusSideBar"
+    },
     // 切换到编辑窗口
-	{
-		"key": "ctrl+w l",
-		"command": "workbench.action.focusLastEditorGroup"
-	},
-	{
-		"key": "ctrl+w k",
-		"command": "workbench.action.focusLastEditorGroup"
-	},
-	{
-		"key": "ctrl+w h",
-		"command": "workbench.action.focusLastEditorGroup"
-	},
+    {
+        "key": "ctrl+w l",
+        "command": "workbench.action.focusLastEditorGroup"
+    },
+    {
+        "key": "ctrl+w k",
+        "command": "workbench.action.focusLastEditorGroup"
+    },
+    {
+        "key": "ctrl+w h",
+        "command": "workbench.action.focusLastEditorGroup"
+    },
     // 切换到辅助侧栏
-	{
-		"key": "ctrl+w b",
-		"command": "workbench.action.focusAuxiliaryBar"
-	},
-	{
-		"key": "ctrl+alt+k",
-		"command": "editor.action.showHover",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "ctrl+k ctrl+i",
-		"command": "-editor.action.showHover",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "ctrl+alt+k",
-		"command": "editor.debug.action.showDebugHover",
-		"when": "editorTextFocus && inDebugMode"
-	},
-	{
-		"key": "ctrl+k ctrl+i",
-		"command": "-editor.debug.action.showDebugHover",
-		"when": "editorTextFocus && inDebugMode"
-	},
-	{
-		"key": "ctrl+alt+i",
-		"command": "bookmarks.toggle",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "ctrl+alt+k",
-		"command": "-bookmarks.toggle",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "ctrl+alt+j",
-		"command": "-bookmarks.jumpToPrevious",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "ctrl+alt+l",
-		"command": "-bookmarks.jumpToNext",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "shift+alt+j",
-		"command": "-bookmarks.expandSelectionToPrevious",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "shift+alt+l",
-		"command": "-bookmarks.expandSelectionToNext",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "shift+alt+k",
-		"command": "-bookmarks.shrinkSelection",
-		"when": "editorTextFocus"
-	},
-
-
-	// 插入模式下ctrl+k 光标向上移动
     {
-      "key": "ctrl+k",
-      "command": "cursorUp",
-      "when": "textInputFocus"
+        "key": "ctrl+w b",
+        "command": "workbench.action.focusAuxiliaryBar"
     },
     {
-      "key": "up",
-      "command": "cursorUp",
-      "when": "textInputFocus"
+        "key": "ctrl+alt+k",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
     },
     {
-      "key": "ctrl+k",
-      "command": "selectPrevSuggestion",
-      "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+        "key": "ctrl+k ctrl+i",
+        "command": "-editor.action.showHover",
+        "when": "editorTextFocus"
     },
     {
-      "key": "up",
-      "command": "selectPrevSuggestion",
-      "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-
-	// 插入模式下ctrl+j 光标向下移动
-    {
-      "key": "ctrl+j",
-      "command": "cursorDown",
-      "when": "textInputFocus"
+        "key": "ctrl+alt+k",
+        "command": "editor.debug.action.showDebugHover",
+        "when": "editorTextFocus && inDebugMode"
     },
     {
-      "key": "down",
-      "command": "cursorDown",
-      "when": "textInputFocus"
+        "key": "ctrl+k ctrl+i",
+        "command": "-editor.debug.action.showDebugHover",
+        "when": "editorTextFocus && inDebugMode"
     },
     {
-      "key": "ctrl+j",
-      "command": "selectNextSuggestion",
-      "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+        "key": "ctrl+alt+i",
+        "command": "bookmarks.toggle",
+        "when": "editorTextFocus"
     },
     {
-      "key": "down",
-      "command": "-selectNextSuggestion",
-      "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-
-	// 插入模式下ctrl+l 光标向右移动
-    {
-      "key": "ctrl+l",
-      "command": "cursorRight",
-      "when": "textInputFocus"
+        "key": "ctrl+alt+k",
+        "command": "-bookmarks.toggle",
+        "when": "editorTextFocus"
     },
     {
-      "key": "right",
-      "command": "cursorRight",
-      "when": "textInputFocus"
-    },
-
-	// 插入模式下ctrl+h 光标向左移动
-    {
-      "key": "ctrl+h",
-      "command": "cursorLeft",
-      "when": "textInputFocus"
+        "key": "ctrl+alt+j",
+        "command": "-bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
     },
     {
-      "key": "left",
-      "command": "cursorLeft",
-      "when": "textInputFocus"
-    },
-
-	// 插入模式下alt+l 光标移至当前行最后
-    {
-      "key": "alt+l",
-      "command": "cursorEnd",
-      "when": "textInputFocus"
+        "key": "ctrl+alt+l",
+        "command": "-bookmarks.jumpToNext",
+        "when": "editorTextFocus"
     },
     {
-      "key": "end",
-      "command": "cursorEnd",
-      "when": "textInputFocus"
-    },
-
-	// 插入模式下alt+h 光标移至当前行最前
-    {
-      "key": "alt+h",
-      "command": "cursorHome",
-      "when": "textInputFocus"
+        "key": "shift+alt+j",
+        "command": "-bookmarks.expandSelectionToPrevious",
+        "when": "editorTextFocus"
     },
     {
-      "key": "home",
-      "command": "cursorHome",
-      "when": "textInputFocus"
-	},
-	{
-		"key": "ctrl+alt+j",
-		"command": "-editor.action.joinLines",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "ctrl+alt+j",
-		"command": "workbench.action.togglePanel"
-	},
-	{
-		"key": "ctrl+j",
-		"command": "-workbench.action.togglePanel"
-	},
-	{
-		"key": "ctrl+w w",
-		"command": "workbench.action.toggleFullScreen",
-		"when": "!isIOS"
-	},
-	{
-		"key": "f11",
-		"command": "-workbench.action.toggleFullScreen",
-		"when": "!isIOS"
-	},
-	{
-		"key": "ctrl+shift+alt+j",
-		"command": "code-runner.runByLanguage"
-	},
-	{
-		"key": "ctrl+alt+j",
-		"command": "-code-runner.runByLanguage"
+        "key": "shift+alt+l",
+        "command": "-bookmarks.expandSelectionToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+k",
+        "command": "-bookmarks.shrinkSelection",
+        "when": "editorTextFocus"
+    },
+    // 插入模式下ctrl+k 光标向上移动
+    {
+        "key": "ctrl+k",
+        "command": "cursorUp",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "up",
+        "command": "cursorUp",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "up",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    // 插入模式下ctrl+j 光标向下移动
+    {
+        "key": "ctrl+j",
+        "command": "cursorDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "down",
+        "command": "cursorDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "down",
+        "command": "-selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    // 插入模式下ctrl+l 光标向右移动
+    {
+        "key": "ctrl+l",
+        "command": "cursorRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "right",
+        "command": "cursorRight",
+        "when": "textInputFocus"
+    },
+    // 插入模式下ctrl+h 光标向左移动
+    {
+        "key": "ctrl+h",
+        "command": "cursorLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "left",
+        "command": "cursorLeft",
+        "when": "textInputFocus"
+    },
+    // 插入模式下alt+l 光标移至当前行最后
+    {
+        "key": "alt+l",
+        "command": "cursorEnd",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "end",
+        "command": "cursorEnd",
+        "when": "textInputFocus"
+    },
+    // 插入模式下alt+h 光标移至当前行最前
+    {
+        "key": "alt+h",
+        "command": "cursorHome",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "home",
+        "command": "cursorHome",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "-editor.action.joinLines",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+w w",
+        "command": "workbench.action.toggleFullScreen",
+        "when": "!isIOS"
+    },
+    {
+        "key": "f11",
+        "command": "-workbench.action.toggleFullScreen",
+        "when": "!isIOS"
+    },
+    {
+        "key": "ctrl+shift+alt+j",
+        "command": "code-runner.runByLanguage"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "-code-runner.runByLanguage"
     },
     {
         "key": "ctrl+r",
@@ -357,5 +349,35 @@
         "key": "ctrl+r",
         "command": "-workbench.action.reloadWindow",
         "when": "isDevelopment && !isAuxiliaryWindowFocusedContext"
-    }
+    },
+    // 创建文件
+    {
+        "command": "explorer.newFile",
+        "key": "a",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    // 修改文件名
+    {
+        "command": "renameFile",
+        "key": "r",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    // 复制文件
+    {
+        "command": "filesExplorer.copy",
+        "key": "c",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    // 粘贴文件
+    {
+        "command": "filesExplorer.paste",
+        "key": "p",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    // 删除文件
+    {
+        "command": "deleteFile",
+        "key": "d",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
 ]
