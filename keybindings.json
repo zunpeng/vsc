@@ -154,6 +154,55 @@
         "key": "ctrl+w b",
         "command": "workbench.action.focusAuxiliaryBar"
     },
+    { // window move down
+        "key": "ctrl+j",
+        "command": "vim.remap",
+        "when": "vim.mode == 'Normal' && !suggestWidgetVisible && !inQuickOpen",
+        "args": {
+            "after": [
+                "<c-w>",
+                "j"
+            ],
+        }
+    },
+    { // make cursor back to editor 必须配置此项，否而在终端下ctrl+k不生效
+        "key": "ctrl+k",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "panelFocus && activePanel"
+    },
+    { // window move up
+        "key": "ctrl+k",
+        "command": "vim.remap",
+        "when": "vim.mode == 'Normal' && !suggestWidgetVisible && !inQuickOpen && !panelFocus",
+        "args": {
+            "after": [
+                "<c-w>",
+                "k"
+            ],
+        }
+    },
+    { // window move left
+        "key": "ctrl+h",
+        "command": "vim.remap",
+        "when": "vim.mode == 'Normal' && !suggestWidgetVisible && !inQuickOpen && !panelFocus",
+        "args": {
+            "after": [
+                "<c-w>",
+                "h"
+            ],
+        }
+    },
+    { // window move right
+        "key": "ctrl+l",
+        "command": "vim.remap",
+        "when": "vim.mode == 'Normal' && !suggestWidgetVisible && !inQuickOpen",
+        "args": {
+            "after": [
+                "<c-w>",
+                "l"
+            ],
+        }
+    },
     {
         "key": "ctrl+alt+k",
         "command": "editor.action.showHover",
@@ -213,7 +262,8 @@
     {
         "key": "ctrl+k",
         "command": "cursorUp",
-        "when": "textInputFocus"
+        // "when": "textInputFocus"
+        "when": "vim.mode == 'Insert' && !suggestWidgetVisible && !inQuickOpen",
     },
     {
         "key": "up",
@@ -234,7 +284,8 @@
     {
         "key": "ctrl+j",
         "command": "cursorDown",
-        "when": "textInputFocus"
+        // "when": "textInputFocus"
+        "when": "vim.mode == 'Insert' && !suggestWidgetVisible && !inQuickOpen",
     },
     {
         "key": "down",
@@ -255,23 +306,27 @@
     {
         "key": "ctrl+l",
         "command": "cursorRight",
-        "when": "textInputFocus"
+        // "when": "textInputFocus"
+        "when": "vim.mode == 'Input' && !suggestWidgetVisible && !inQuickOpen && !panelFocus",
     },
     {
         "key": "right",
         "command": "cursorRight",
-        "when": "textInputFocus"
+        // "when": "textInputFocus"
+        "when": "vim.mode == 'Input' && !suggestWidgetVisible && !inQuickOpen && !panelFocus",
     },
     // 插入模式下ctrl+h 光标向左移动
     {
         "key": "ctrl+h",
         "command": "cursorLeft",
-        "when": "textInputFocus"
+        // "when": "textInputFocus"
+        "when": "vim.mode == 'Input' && !suggestWidgetVisible && !inQuickOpen && !panelFocus",
     },
     {
         "key": "left",
         "command": "cursorLeft",
-        "when": "textInputFocus"
+        // "when": "textInputFocus"
+        "when": "vim.mode == 'Input' && !suggestWidgetVisible && !inQuickOpen && !panelFocus",
     },
     // 插入模式下alt+l 光标移至当前行最后
     {
@@ -300,10 +355,17 @@
         "command": "-editor.action.joinLines",
         "when": "editorTextFocus"
     },
+    // 打开终端
     {
-        "key": "ctrl+alt+j",
+        // "key": "ctrl+alt+j",
+        "key": "ctrl+\\",
         "command": "workbench.action.togglePanel"
     },
+    // { // toggle terminal 同时会跳转到终端
+	// 	"key": "ctrl+\\",
+	// 	"command": "workbench.action.terminal.toggleTerminal",
+	// 	"when": "terminal.active"
+	// },
     {
         "key": "ctrl+j",
         "command": "-workbench.action.togglePanel"
@@ -354,6 +416,11 @@
     {
         "command": "explorer.newFile",
         "key": "a",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    { // new folder
+        "key": "shift+a",
+        "command": "explorer.newFolder",
         "when": "filesExplorerFocus && !inputFocus"
     },
     // 修改文件名
